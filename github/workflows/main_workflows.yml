@@ -2,9 +2,12 @@
 name: Java EC2 Deploy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: '배포 환경'
+        required: true
+        default: 'staging'
 
 jobs:
   deploy:
